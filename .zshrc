@@ -114,9 +114,6 @@ export PATH=$PATH:/Users/yj/go/bin
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 export PATH="/usr/local/opt/llvm/bin:$PATH"
-# JAVA PATH
-export JAVA_HOME=/Users/yj/Library/Java/JavaVirtualMachines/azul-16.0.2/Contents/Home
-export PATH=${PATH}:$JAVA_HOME/bin:
 
 PATH=$PATH:~/path/to/zig
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
