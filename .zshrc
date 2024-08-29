@@ -115,7 +115,7 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 # JAVA PATH
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-15.jdk/Contents/Home
+export JAVA_HOME=/Users/yj/Library/Java/JavaVirtualMachines/azul-16.0.2/Contents/Home
 export PATH=${PATH}:$JAVA_HOME/bin:
 
 PATH=$PATH:~/path/to/zig
