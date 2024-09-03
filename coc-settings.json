@@ -35,6 +35,7 @@
 			"filetypes": ["go"],
 			"initializationOptions": {
 			"usePlaceholders": true
-      }
+			}
+		}
 	}
 }
