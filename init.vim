@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin($HOME . '/.config/nvim/plugged')
 " Use release branch
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Or latest tag
