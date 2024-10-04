@@ -1,6 +1,6 @@
 call plug#begin($HOME . '/.config/nvim/plugged')
 " Use release branch
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Or latest tag
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 " Or build from source code by use yarn: https://yarnpkg.com
@@ -74,6 +74,7 @@ inoremap <silent><expr> <TAB>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+let g:NERDTreeIgnore = ['^node_modules$']
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice
@@ -92,7 +93,7 @@ function! s:show_documentation()
     call CocActionAsync('doHover')
   else
     execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
+  endif:
 endfunction
 
 
@@ -125,4 +126,7 @@ au BufReadPost *
 \ exe "norm g`\"" |
 \ endif
 
+
+" gruvbox set
+let g:gruvbox_contrast_dark = 'soft'
 
