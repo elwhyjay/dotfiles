@@ -1,5 +1,5 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -11,7 +11,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/yj/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -109,12 +109,34 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH=/opt/homebrew/bin:$PATH
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
-export PATH="/usr/local/opt/llvm/bin:$PATH"
 
-PATH=$PATH:~/path/to/zig
+#if macOS
+if [ -d "/opt/homebrew/bin" ] ; then
+    export PATH="/opt/homebrew/bin:/opt/homebrew/bin:$PATH"
+fi  
+if [ -d "/usr/local/bin" ] ; then
+    export PATH="/usr/local/bin:/usr/local/bin:$PATH"
+fi
+if [ -f "/opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme" ]; then
+    source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+elif [ -f "/usr/share/powerlevel10k/powerlevel10k.zsh-theme" ]; then
+    # Linux (apt/yum)
+    source /usr/share/powerlevel10k/powerlevel10k.zsh-theme
+fi
+if [ -d "/usr/local/opt/llvm/bin" ] ; then
+    export PATH="/usr/local/opt/llvm/bin:$PATH"
+elif [ -d "/opt/homebrew/opt/llvm/bin" ] ; then
+    export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+elif [ -d "/usr/lib/llvm/bin" ] ; then
+    export PATH="/usr/lib/llvm/bin:$PATH"
+fi
+# ZIG  PATH
+if [ -d "/usr/local/bin/zig" ] ; then
+    export PATH="/usr/local/bin/zig:$PATH"
+elif [ -d "/opt/homebrew/bin/zig" ] ; then
+    export PATH="/opt/homebrew/bin/zig:$PATH"
+fi
+
 
 #GO PATH
 export GOPATH="${HOME}/.go"
@@ -140,7 +162,7 @@ unset __conda_setup
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-[ -f "/Users/yj/.ghcup/env" ] && source "/Users/yj/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
 alias vim="nvim"
 alias ls="lsd"
@@ -149,8 +171,19 @@ alias tmux="TERM=xterm-256color tmux"
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 
 # Added by Windsurf
-export PATH="/Users/yj/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 eval "$(~/.local/bin/mise activate zsh)"
 
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+# wezterm
+if [ -d "/Applications/WezTerm.app/Contents/MacOS" ] ; then
+    export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+fi
+
+
+# Lium CLI completion
+command -v lium >/dev/null 2>&1 && eval "$(_LIUM_COMPLETE=zsh_source lium)"
+
+alias svim='sudo nvim -u ~/dotfiles/.vimrc'
