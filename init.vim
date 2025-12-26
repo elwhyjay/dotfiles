@@ -44,6 +44,8 @@ set title
 set smartindent
 set hlsearch
 set ignorecase
+set smartindent
+set incsearch
 set bs=indent,eol,start
 set nu
 set autoindent
@@ -57,6 +59,8 @@ set encoding=utf-8
 set signcolumn=yes
 set updatetime =300
 set colorcolumn=80
+
+let mapleader = " "
 "kotlin
 autocmd filetype kotlin setlocal colorcolumn=100
 
@@ -101,7 +105,7 @@ endfunction
 "devicons for NERDTree
 let g:webdevicons_enable_nerdtree = 1
 
-
+map <leader>D :execute 'normal! a' . system('date -u "+(%Y%m%d-%H%M%S)"')<CR>
 
 function! CheckBackspace() abort
   let col = col('.') - 1
