@@ -88,6 +88,21 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
 
+
+"coc-Node path
+"if executable('node')
+""	let g:coc_node_path = '/opt/homebrew/bin/node'
+"endif
+
+if has('macunix')
+  if filereadable('/opt/homebrew/bin/node')
+    let g:coc_node_path = '/opt/homebrew/bin/node'
+  elseif filereadable('/usr/local/bin/node')
+    let g:coc_node_path = '/usr/local/bin/node'
+  endif
+endif
+
+
 "Use K to show doc in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -111,6 +126,10 @@ function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" CP 설정
+autocmd FileType c nnoremap <F5> :w<CR>:!gcc -O2 % -o %< -lm && ./%< < input.txt<CR>
+autocmd FileType cpp nnoremap <F5> :w<CR>:!g++ -O2 -std=c++17 % -o %< && ./%< < input.txt<CR>
 
 
 if has('nvim')
