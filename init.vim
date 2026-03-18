@@ -1,99 +1,191 @@
-call plug#begin($HOME . '/.config/nvim/plugged')
-" Use release branch
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Or latest tag
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
-" Or build from source code by use yarn: https://yarnpkg.com
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-
-Plug 'morhetz/gruvbox'
-Plug 'junegunn/seoul256.vim'
-
-Plug 'preservim/nerdtree'
-
-Plug 'mattn/emmet-vim'
-
-Plug 'Raimondi/delimitMate'
-
-Plug 'preservim/tagbar'
-
-Plug 'nathanaelkane/vim-indent-guides'
-
-Plug 'vim-airline/vim-airline'
-Plug 'ryanoasis/vim-devicons'
-Plug 'folke/which-key.nvim'
-
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-Plug 'https://github.com/preservim/tagbar'
-
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-Plug 'junegunn/fzf'
-"for fun
-Plug 'eandrju/cellular-automaton.nvim'
-
-"lang
-Plug 'weirongxu/coc-kotlin', {'do': 'yarn install --frozen-lockfile'}
-
-call plug#end()
-
-set tabstop=4 " Tab width
-set shiftwidth=4 " auto indent width
-set title
-set smartindent
-set hlsearch
-set ignorecase
-set smartindent
-set incsearch
-set bs=indent,eol,start
-set nu
-set autoindent
-set scrolloff=2
-set sts=4
-set sw=4
-set cindent
-set laststatus=2
-set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
+scriptencoding utf-8
 set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,cp949,default,latin1
+set shell=/bin/bash
+set diffopt+=iwhite,vertical
+set pastetoggle=<F8>
+set scrolloff=3
+set switchbuf+=usetab,split
+set startofline
+set splitbelow
+set nobackup
+set nowritebackup
+set nocompatible
+set nofoldenable
+set noshowmode
+set noswapfile
+set nowrap
+set updatetime=300
+set termguicolors
+set mouse=
+set title
+set laststatus=2
+
+" History
+if has('persistent_undo')
+  set undofile
+  let &undodir = $HOME . '/.vim/undodir'
+  silent! call mkdir(undodir, 'p')
+endif
+
+" Indentation
+set cindent
+set autoindent
+set smartindent
+
+" Tab
+set tabstop=4
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+" Searching
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch | nohlsearch
+set nowrapscan
+
+" Line number column
+set number
+set cursorline
+" 80th column color
+set textwidth=80
+set formatoptions-=t
+set colorcolumn=+1,+2,+3
+" Listchars
+set list
+let &listchars = 'tab:› ,trail:-,extends:»,precedes:«,nbsp:.'
+" Pair matching
+set matchpairs+=<:>
+set showmatch
+" Wildmenu
+set wildmode=longest,full
+
+" Completion
+set completeopt=preview,menuone,noinsert,noselect
+set shortmess+=c
 set signcolumn=yes
-set updatetime =300
-set colorcolumn=80
 
-let mapleader = " "
-"kotlin
-autocmd filetype kotlin setlocal colorcolumn=100
+" Filetype
+autocmd FileType kotlin setlocal colorcolumn=100
 
 
-"nerdtree 단축키 설정
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
+"
+" Key mappings
+"
+let g:mapleader = ','
 
-nnoremap <C-r> :CellularAutomaton make_it_rain<CR>
-nnoremap <C-l> :CellularAutomaton game_of_life<CR>
+" Easy file save without switching IME
+cabbrev ㅈ w
+cabbrev ㅂ q
+cabbrev ㅈㅂ wq
 
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-let g:NERDTreeIgnore = ['^node_modules$']
+" Easy command-line mode
+nnoremap ; :
+" Easy home/end
+inoremap <C-a> <ESC>I
+inoremap <C-e> <End>
+nnoremap <C-a> ^
+nnoremap <C-e> $
+vnoremap <C-a> ^
+vnoremap <C-e> $
+" Easy horizontal scrolling
+noremap <esc>l 3zl
+noremap <esc>h 3zh
+noremap <a-l> 3zl
+noremap <a-h> 3zh
+" Easy delete key
+vnoremap <backspace> "_d
+" Easy file save
+nnoremap <silent> <C-s>      :update<CR>
+inoremap <silent> <C-s> <ESC>:update<CR>
+vnoremap <silent> <C-s> <ESC>:update<CR>
+" Easy indentation
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+" Easy splitting & resizing
+nnoremap <silent> <esc>- :split<CR>
+nnoremap <silent> <esc>\ :vertical split<CR>
+nnoremap <silent> <esc>h :vertical resize -5<CR>
+nnoremap <silent> <esc>j :resize -3<CR>
+nnoremap <silent> <esc>k :resize +3<CR>
+nnoremap <silent> <esc>l :vertical resize +5<CR>
+nnoremap <silent> <a--> :split<CR>
+nnoremap <silent> <a-\> :vertical split<CR>
+nnoremap <silent> <a-h> :vertical resize -5<CR>
+nnoremap <silent> <a-j> :resize -3<CR>
+nnoremap <silent> <a-k> :resize +3<CR>
+nnoremap <silent> <a-l> :vertical resize +5<CR>
+" Tab navigations
+nnoremap <esc>t :tabnew<CR>
+nnoremap <esc>T :-tabnew<CR>
+nnoremap <esc>1 1gt
+nnoremap <esc>2 2gt
+nnoremap <esc>3 3gt
+nnoremap <esc>4 4gt
+nnoremap <esc>5 5gt
+nnoremap <esc>6 6gt
+nnoremap <esc>7 7gt
+nnoremap <esc>8 8gt
+nnoremap <esc>9 9gt
+nnoremap <a-t> :tabnew<CR>
+nnoremap <a-T> :-tabnew<CR>
+nnoremap <a-1> 1gt
+nnoremap <a-2> 2gt
+nnoremap <a-3> 3gt
+nnoremap <a-4> 4gt
+nnoremap <a-5> 5gt
+nnoremap <a-6> 6gt
+nnoremap <a-7> 7gt
+nnoremap <a-8> 8gt
+nnoremap <a-9> 9gt
+" Insert date
+map <leader>D :execute 'normal! a' . system('date -u "+(%Y%m%d-%H%M%S)"')<CR>
 
-" Make <CR> to accept selected completion item or notify coc.nvim to format
-" <C-g>u breaks current undo, please make your own choice
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Easy newline insert
+function! s:CustomEnter()
+  if &modifiable
+    normal! o
+  else
+    " Exception for quickfix buffer and other unmodifiable buffers.
+    " See https://vi.stackexchange.com/a/3129
+    execute 'normal! \<CR>'
+  endif
+endfunction
+nnoremap <CR> :call <SID>CustomEnter()<CR>
 
-nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
+" Easy drag select
+function! s:DragSelectMode()
+  if &signcolumn != 'no'
+    " Enable DragSelectMode
+    let s:previous_scl = &signcolumn
+    set signcolumn=no
+    set nonumber
+    call nvim_buf_clear_namespace(0, -1, 0, -1)
+    if s:use_coc
+      call coc#config('git', {'addGBlameToVirtualText': 0})
+    endif
+  else
+    " Disable DragSelectMode
+    let &signcolumn = s:previous_scl
+    set number
+    if s:use_coc
+      call coc#config('git', {'addGBlameToVirtualText': 1})
+    endif
+  endif
+endfunction
+nnoremap <F7> :call <SID>DragSelectMode()<CR>
+
+" CP 설정
+autocmd FileType c nnoremap <F5> :w<CR>:!gcc -O2 % -o %< -lm && ./%< < input.txt<CR>
+autocmd FileType cpp nnoremap <F5> :w<CR>:!g++ -O2 -std=c++17 % -o %< && ./%< < input.txt<CR>
 
 
-"coc-Node path
-"if executable('node')
-""	let g:coc_node_path = '/opt/homebrew/bin/node'
-"endif
-
+"
+" coc.nvim node path (macOS)
+"
 if has('macunix')
   if filereadable('/opt/homebrew/bin/node')
     let g:coc_node_path = '/opt/homebrew/bin/node'
@@ -103,73 +195,285 @@ if has('macunix')
 endif
 
 
-"Use K to show doc in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+"
+" List of plugins
+"
+let s:use_coc = has('nvim-0.3.2') && executable('yarn')
+try
+  call plug#begin('~/.config/nvim/plugged')
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
+  " Configs
+  Plug 'tpope/vim-sensible'
+
+  " IDE
+  if s:use_coc
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-stylelint', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-sources', {'do': 'yarn install --frozen-lockfile', 'rtp': 'packages/emoji'}
+    if executable('clangd')
+      Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
+    endif
+    if executable('go')
+      Plug 'josa42/coc-go', {'do': 'yarn install --frozen-lockfile'}
+    endif
+    Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'weirongxu/coc-kotlin', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'junegunn/fzf'
   endif
+
+  " Neovim plugins
+  if has('nvim-0.7')
+    Plug 'github/copilot.vim'
+    Plug 'folke/which-key.nvim'
+    Plug 'NvChad/nvim-colorizer.lua'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  endif
+
+  " File browsing
+  Plug 'justinmk/vim-dirvish'
+  Plug 'preservim/nerdtree'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'preservim/tagbar'
+
+  " Visual
+  Plug 'vim-airline/vim-airline'
+  Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'ntpeters/vim-better-whitespace'
+  Plug 'ayu-theme/ayu-vim'
+
+  " Syntax
+  let g:polyglot_disabled = ['sensible', 'v'] | Plug 'sheerun/vim-polyglot'
+  Plug 'wuelnerdotexe/vim-astro'
+
+  " Language
+  Plug 'mattn/emmet-vim'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+  " Format
+  Plug 'sgur/vim-editorconfig'
+  Plug 'Raimondi/delimitMate'
+
+  " Cursor navigation
+  Plug 'farmergreg/vim-lastplace'
+  Plug 'rhysd/clever-f.vim'
+  Plug 'haya14busa/is.vim'
+
+  " Util
+  Plug 'simnalamburt/vim-mundo'
+  if has('mac')
+    Plug 'simnalamburt/vim-tiny-ime', { 'do' : './build' }
+  endif
+  Plug 'godlygeek/tabular'
+
+  " Fun
+  Plug 'eandrju/cellular-automaton.nvim'
+
+  call plug#end()
+
+
+  "
+  " Configs for plugins
+  "
+  if s:use_coc
+    " coc.nvim
+    let g:coc_disable_startup_warning = 1
+
+    nnoremap <silent> K :call <SID>show_documentation()<CR>
+    function! s:show_documentation()
+      if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+      elseif (coc#rpc#ready())
+        call CocActionAsync('doHover')
+      else
+        execute '!' . &keywordprg . " " . expand('<cword>')
+      endif
+    endfunction
+
+    " coc completion mappings
+    function! CheckBackspace() abort
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
+
+    inoremap <silent><expr> <TAB>
+          \ coc#pum#visible() ? coc#pum#next(1) :
+          \ CheckBackspace() ? "\<Tab>" :
+          \ coc#refresh()
+    inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+    inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                                  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+    inoremap <silent><expr> <c-space> coc#refresh()
+
+    " coc-highlight
+    augroup vimrc_highlight
+      autocmd!
+      autocmd CursorHold * silent call <SID>highlight()
+    augroup END
+    function! s:highlight()
+      if exists('*CocActionAsync')
+        call CocActionAsync('highlight')
+      endif
+    endfunction
+
+    " coc-prettier
+    command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+    " fzf lsp menu
+    nnoremap <leader>f :call <SID>lsp_menu()<CR>
+    function! s:lsp_menu()
+      call fzf#run({
+      \ 'source': [
+      \   'rename',
+      \   'jumpDefinition',
+      \   'jumpDeclaration',
+      \   'jumpImplementation',
+      \   'jumpTypeDefinition',
+      \   'jumpReferences',
+      \   'diagnosticInfo',
+      \   'diagnosticNext',
+      \   'diagnosticPrevious',
+      \   'format',
+      \   'openLink',
+      \   'doQuickfix',
+      \   'doHover',
+      \   'refactor',
+      \ ],
+      \ 'sink': function('CocActionAsync'),
+      \ 'options': '+m',
+      \ 'down': 10 })
+    endfunction
+  endif
+
+  " Neovim plugins
+  if has('nvim-0.7')
+    try
+      lua require('which-key').setup()
+      lua require('colorizer').setup()
+    catch /^Vim\%((\a\+)\)\=:E5108/
+    endtry
+  endif
+
+  " nerdtree
+  noremap <silent> <leader>n :NERDTreeToggle<CR>
+  let g:NERDTreeIgnore = ['^node_modules$']
+  let g:webdevicons_enable_nerdtree = 1
+  function! s:nerdtree_startup()
+    if exists('s:std_in') || argc() != 1 || !isdirectory(argv()[0])
+      return
+    endif
+    execute 'NERDTree' argv()[0]
+    wincmd p
+    enew
+    execute 'cd '.argv()[0]
+    NERDTreeFocus
+  endfunction
+  augroup vimrc_nerdtree
+    autocmd!
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * call s:nerdtree_startup()
+    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  augroup END
+
+  " tagbar
+  nmap <F8> :TagbarToggle<CR>
+
+  " vim-indent-guides
+  nmap <leader>i <Plug>IndentGuidesToggle
+  let g:indent_guides_enable_on_vim_startup = 1
+  let g:indent_guides_auto_colors = 0
+  let g:indent_guides_guide_size = 1
+  let g:indent_guides_start_level = 2
+  let g:indent_guides_default_mapping = 0
+
+  " vim-terraform
+  let g:terraform_fmt_on_save=1
+
+  " vim-astro
+  let g:astro_typescript = 'enable'
+
+  " clever-f.vim
+  let g:clever_f_across_no_line = 1
+  let g:clever_f_smart_case = 1
+
+  " mundo.vim
+  let g:mundo_right = 1
+  nnoremap <leader>g :MundoToggle<CR>
+
+  " cellular-automaton
+  nnoremap <leader>r :CellularAutomaton make_it_rain<CR>
+
+catch /^Vim\%((\a\+)\)\=:E117/
+endtry
+
+
+"
+" Theme
+"
+let ayucolor = 'dark'
+try
+  colorscheme ayu
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme elflord
+endtry
+
+function! s:fg(item, color)
+  execute printf('highlight %s guifg=%s', a:item, a:color)
+endfunction
+function! s:bg(item, color)
+  execute printf('highlight %s guibg=%s', a:item, a:color)
 endfunction
 
+" TabLine
+let s:tab_color = '#1c2328'
+highlight TabLine cterm=NONE gui=NONE
+call s:fg('TabLine', '#62788c')
+call s:bg('TabLine', s:tab_color)
+call s:fg('TabLineSel', '#FFFFFF')
+call s:bg('TabLineSel', s:tab_color)
+call s:fg('TabLineFill', s:tab_color)
 
-"devicons for NERDTree
-let g:webdevicons_enable_nerdtree = 1
+" Pretty vimdiff colorscheme
+call s:fg('DiffDelete', '#5a0000')
+call s:bg('DiffDelete', '#340000')
 
-map <leader>D :execute 'normal! a' . system('date -u "+(%Y%m%d-%H%M%S)"')<CR>
+" IndentGuides
+let s:indent_color = '#151a1e'
+let s:whitespace_color = '#2d3640'
+call s:bg('IndentGuidesEven', s:indent_color)
+call s:bg('IndentGuidesOdd', s:indent_color)
+call s:fg('IndentGuidesEven', s:whitespace_color)
+call s:fg('IndentGuidesOdd', s:whitespace_color)
+call s:fg('Whitespace', s:whitespace_color)
 
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" CP 설정
-autocmd FileType c nnoremap <F5> :w<CR>:!gcc -O2 % -o %< -lm && ./%< < input.txt<CR>
-autocmd FileType cpp nnoremap <F5> :w<CR>:!g++ -O2 -std=c++17 % -o %< && ./%< < input.txt<CR>
+" Matching
+let s:match_color = '#232b32'
+highlight MatchParen cterm=NONE gui=NONE
+call s:bg('MatchParen', s:match_color)
+call s:bg('CocHighlightText', s:match_color)
 
 
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
+"
+" Augroup
+"
+augroup vimrc
+  autocmd!
+  " Vim automatic reload
+  autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+  autocmd FileChangedShellPost *
+    \ echohl WarningMsg | echo 'File changed on disk. Buffer reloaded.' | echohl None
+augroup END
+
+
+"
+" Local configs
+"
+if filereadable($HOME . '/.vimrc.local')
+  source $HOME/.vimrc.local
 endif
-
-if has("syntax")
-	syntax on
-endif
-
-" gruvbox set
-set background=dark
-colorscheme gruvbox
-let g:gruvbox_contrast_dark='soft'
-let g:seoul256_background = 233
-colorscheme seoul256
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-if (empty($TMUX) && getenv('TERM_PROGRAM') != 'Apple_Terminal')
-  if (has("nvim"))
-    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
-
-
-" 마지막으로 수정된 곳에 커서를 위치함
-au BufReadPost *
-\ if line("'\"") > 0 && line("'\"") <= line("$") |
-\ exe "norm g`\"" |
-\ endif
-
-
-
