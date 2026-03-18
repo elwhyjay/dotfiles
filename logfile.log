@@ -1,0 +1,407 @@
+
+chdir(/usr/share/vim)
+fchdir() to previous dir
+"$VIM/vimrc"을(를) 불러들이는 중
+chdir(/usr/share/vim/vim82)
+fchdir() to previous dir
+8 줄: "/usr/share/vim/vim82/debian.vim" 불러들이는 중
+/usr/share/vim/vim82/debian.vim 불러들이기 끝
+/usr/share/vim/vimrc에서 계속
+chdir(/usr/share/vim/vim82/syntax)
+fchdir() to previous dir
+25 줄: "/usr/share/vim/vim82/syntax/syntax.vim" 불러들이는 중
+chdir(/usr/share/vim/vim82/syntax)
+fchdir() to previous dir
+19 줄: "/usr/share/vim/vim82/syntax/synload.vim" 불러들이는 중
+chdir(/usr/share/vim/vim82/syntax)
+fchdir() to previous dir
+21 줄: "/usr/share/vim/vim82/syntax/syncolor.vim" 불러들이는 중
+chdir(/usr/share/vim/vim82/colors/lists)
+fchdir() to previous dir
+53 줄: "/usr/share/vim/vim82/colors/lists/default.vim" 불러들이는 중
+/usr/share/vim/vim82/colors/lists/default.vim 불러들이기 끝
+/usr/share/vim/vim82/syntax/syncolor.vim에서 계속
+/usr/share/vim/vim82/syntax/syncolor.vim 불러들이기 끝
+/usr/share/vim/vim82/syntax/synload.vim에서 계속
+/usr/share/vim/vim82/syntax/synload.vim 불러들이기 끝
+/usr/share/vim/vim82/syntax/syntax.vim에서 계속
+chdir(/usr/share/vim/vim82)
+fchdir() to previous dir
+25 줄: "/usr/share/vim/vim82/filetype.vim" 불러들이는 중
+'runtimepath'에서 찾을 수 없음: "ftdetect/*.vim"
+/usr/share/vim/vim82/filetype.vim 불러들이기 끝
+/usr/share/vim/vim82/syntax/syntax.vim에서 계속
+"FileType"을(를) 위한 자동명령어 * 실행중
+자동명령 exe "set syntax=" . expand("<amatch>")
+
+"Syntax"을(를) 위한 자동명령어 * 실행중
+자동명령 call s:SynSet()
+
+"BufRead"을(를) 위한 자동명령어 * 실행중
+자동명령 if !did_filetype() && expand("<amatch>") !~ g:ft_ignore_pat | runtime! scripts.vim | endif
+
+chdir(/usr/share/vim/vim82)
+fchdir() to previous dir
+0 줄: "/usr/share/vim/vim82/scripts.vim" 불러들이는 중
+/usr/share/vim/vim82/scripts.vim 불러들이기 끝
+"BufRead"을(를) 위한 자동명령어 *에서 계속
+"BufRead"을(를) 위한 자동명령어 *.txt 실행중
+자동명령 if getline('$') !~ 'vim:.*ft=help'|   setf text| endif
+
+"FileType"을(를) 위한 자동명령어 * 실행중
+자동명령 exe "set syntax=" . expand("<amatch>")
+
+"Syntax"을(를) 위한 자동명령어 * 실행중
+자동명령 call s:SynSet()
+
+'runtimepath'에서 찾을 수 없음: "syntax/text.vim syntax/text/*.vim"
+"BufRead"을(를) 위한 자동명령어 * 실행중
+자동명령 if !did_filetype() && expand("<amatch>") !~ g:ft_ignore_pat    && (getline(1) =~ '^#' || getline(2) =~ '^#' || getline(3) =~ '^#'^I|| getline(4) =~ '^#' || getline(5) =~ '^#') |   setf FALLBACK conf | endif
+
+/usr/share/vim/vim82/syntax/syntax.vim 불러들이기 끝
+/usr/share/vim/vimrc에서 계속
+$VIM/vimrc 불러들이기 끝
+chdir(/root)
+fchdir() to previous dir
+"$HOME/.vimrc"을(를) 불러들이는 중
+chdir(/usr/share/vim/vim82/syntax)
+fchdir() to previous dir
+21 줄: "/usr/share/vim/vim82/syntax/syncolor.vim" 불러들이는 중
+/usr/share/vim/vim82/syntax/syncolor.vim 불러들이기 끝
+/root/.vimrc에서 계속
+chdir(/usr/share/vim/vim82)
+fchdir() to previous dir
+22 줄: "/usr/share/vim/vim82/ftoff.vim" 불러들이는 중
+/usr/share/vim/vim82/ftoff.vim 불러들이기 끝
+/root/.vimrc에서 계속
+chdir(/home/yj/.vim/bundle/Vundle.vim/autoload)
+fchdir() to previous dir
+26 줄: "/home/yj/.vim/bundle/Vundle.vim/autoload/vundle.vim" 불러들이는 중
+/home/yj/.vim/bundle/Vundle.vim/autoload/vundle.vim 불러들이기 끝
+/root/.vimrc에서 계속
+chdir(/home/yj/.vim/bundle/Vundle.vim/autoload/vundle)
+fchdir() to previous dir
+4 줄: "/home/yj/.vim/bundle/Vundle.vim/autoload/vundle/config.vim" 불러들이는 중
+/home/yj/.vim/bundle/Vundle.vim/autoload/vundle/config.vim 불러들이기 끝
+vundle#rc에서 계속
+chdir(/usr/share/vim/vim82)
+fchdir() to previous dir
+54 줄: "/usr/share/vim/vim82/filetype.vim" 불러들이는 중
+chdir(/home/yj/.vim/bundle/vim-fugitive/ftdetect)
+fchdir() to previous dir
+2414 줄: "/home/yj/.vim/bundle/vim-fugitive/ftdetect/fugitive.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-fugitive/ftdetect/fugitive.vim 불러들이기 끝
+/usr/share/vim/vim82/filetype.vim에서 계속
+/usr/share/vim/vim82/filetype.vim 불러들이기 끝
+/root/.vimrc에서 계속
+chdir(/usr/share/vim/vim82)
+fchdir() to previous dir
+54 줄: "/usr/share/vim/vim82/ftplugin.vim" 불러들이는 중
+/usr/share/vim/vim82/ftplugin.vim 불러들이기 끝
+/root/.vimrc에서 계속
+chdir(/usr/share/vim/vim82)
+fchdir() to previous dir
+54 줄: "/usr/share/vim/vim82/indent.vim" 불러들이는 중
+/usr/share/vim/vim82/indent.vim 불러들이기 끝
+/root/.vimrc에서 계속
+chdir(/usr/share/vim/vim82/syntax)
+fchdir() to previous dir
+70 줄: "/usr/share/vim/vim82/syntax/syncolor.vim" 불러들이는 중
+/usr/share/vim/vim82/syntax/syncolor.vim 불러들이기 끝
+/root/.vimrc에서 계속
+chdir(/usr/share/vim/vim82/colors/lists)
+fchdir() to previous dir
+119 줄: "/usr/share/vim/vim82/colors/lists/default.vim" 불러들이는 중
+/usr/share/vim/vim82/colors/lists/default.vim 불러들이기 끝
+/root/.vimrc에서 계속
+chdir(/home/yj/.vim/bundle/gruvbox/colors)
+fchdir() to previous dir
+119 줄: "/home/yj/.vim/bundle/gruvbox/colors/gruvbox.vim" 불러들이는 중
+chdir(/usr/share/vim/vim82/syntax)
+fchdir() to previous dir
+13 줄: "/usr/share/vim/vim82/syntax/syncolor.vim" 불러들이는 중
+/usr/share/vim/vim82/syntax/syncolor.vim 불러들이기 끝
+/home/yj/.vim/bundle/gruvbox/colors/gruvbox.vim에서 계속
+chdir(/usr/share/vim/vim82/syntax)
+fchdir() to previous dir
+15 줄: "/usr/share/vim/vim82/syntax/syncolor.vim" 불러들이는 중
+/usr/share/vim/vim82/syntax/syncolor.vim 불러들이기 끝
+/home/yj/.vim/bundle/gruvbox/colors/gruvbox.vim에서 계속
+/home/yj/.vim/bundle/gruvbox/colors/gruvbox.vim 불러들이기 끝
+/root/.vimrc에서 계속
+"ColorScheme"을(를) 위한 자동명령어 * 실행중
+자동명령 highlight SpellBad   cterm=Underline   ctermfg=NONE   ctermbg=NONE   term=Reverse   gui=Undercurl   guisp=Red
+
+자동명령 highlight SpellCap   cterm=Underline   ctermfg=NONE   ctermbg=NONE   term=Reverse   gui=Undercurl   guisp=Red
+
+자동명령 highlight SpellLocal   cterm=Underline   ctermfg=NONE   ctermbg=NONE   term=Reverse   gui=Undercurl   guisp=Red
+
+자동명령 highlight SpellRare   cterm=Underline   ctermfg=NONE   ctermbg=NONE   term=Reverse   gui=Undercurl   guisp=Red
+
+$HOME/.vimrc 불러들이기 끝
+'packpath'에서 찾을 수 없음: "pack/*/start/*"
+chdir(/home/yj/.vim/bundle/vim-fugitive/plugin)
+fchdir() to previous dir
+"/home/yj/.vim/bundle/vim-fugitive/plugin/fugitive.vim"을(를) 불러들이는 중
+/home/yj/.vim/bundle/vim-fugitive/plugin/fugitive.vim 불러들이기 끝
+chdir(/home/yj/.vim/bundle/command-t/plugin)
+fchdir() to previous dir
+"/home/yj/.vim/bundle/command-t/plugin/command-t.vim"을(를) 불러들이는 중
+/home/yj/.vim/bundle/command-t/plugin/command-t.vim 불러들이기 끝
+chdir(/home/yj/.vim/bundle/vim-airline/plugin)
+fchdir() to previous dir
+"/home/yj/.vim/bundle/vim-airline/plugin/airline.vim"을(를) 불러들이는 중
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline)
+fchdir() to previous dir
+303 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/init.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/init.vim 불러들이기 끝
+/home/yj/.vim/bundle/vim-airline/plugin/airline.vim에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline)
+fchdir() to previous dir
+165 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/parts.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/parts.vim 불러들이기 끝
+airline#init#bootstrap에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline/formatter)
+fchdir() to previous dir
+181 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/formatter/short_path.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/formatter/short_path.vim 불러들이기 끝
+airline#init#bootstrap에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline)
+fchdir() to previous dir
+75 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/util.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/util.vim 불러들이기 끝
+<SNR>19_airline_toggle에서 계속
+No matching autocommands: User AirlineToggledOn
+/home/yj/.vim/bundle/vim-airline/plugin/airline.vim 불러들이기 끝
+chdir(/home/yj/.vim/bundle/vim-airline-themes/plugin)
+fchdir() to previous dir
+"/home/yj/.vim/bundle/vim-airline-themes/plugin/airline-themes.vim"을(를) 불러들이는 중
+/home/yj/.vim/bundle/vim-airline-themes/plugin/airline-themes.vim 불러들이기 끝
+chdir(/usr/share/vim/vim82/plugin)
+fchdir() to previous dir
+"/usr/share/vim/vim82/plugin/getscriptPlugin.vim"을(를) 불러들이는 중
+/usr/share/vim/vim82/plugin/getscriptPlugin.vim 불러들이기 끝
+chdir(/usr/share/vim/vim82/plugin)
+fchdir() to previous dir
+"/usr/share/vim/vim82/plugin/gzip.vim"을(를) 불러들이는 중
+/usr/share/vim/vim82/plugin/gzip.vim 불러들이기 끝
+chdir(/usr/share/vim/vim82/plugin)
+fchdir() to previous dir
+"/usr/share/vim/vim82/plugin/logiPat.vim"을(를) 불러들이는 중
+/usr/share/vim/vim82/plugin/logiPat.vim 불러들이기 끝
+chdir(/usr/share/vim/vim82/plugin)
+fchdir() to previous dir
+"/usr/share/vim/vim82/plugin/manpager.vim"을(를) 불러들이는 중
+/usr/share/vim/vim82/plugin/manpager.vim 불러들이기 끝
+chdir(/usr/share/vim/vim82/plugin)
+fchdir() to previous dir
+"/usr/share/vim/vim82/plugin/matchparen.vim"을(를) 불러들이는 중
+/usr/share/vim/vim82/plugin/matchparen.vim 불러들이기 끝
+chdir(/usr/share/vim/vim82/plugin)
+fchdir() to previous dir
+"/usr/share/vim/vim82/plugin/netrwPlugin.vim"을(를) 불러들이는 중
+/usr/share/vim/vim82/plugin/netrwPlugin.vim 불러들이기 끝
+chdir(/usr/share/vim/vim82/plugin)
+fchdir() to previous dir
+"/usr/share/vim/vim82/plugin/rrhelper.vim"을(를) 불러들이는 중
+/usr/share/vim/vim82/plugin/rrhelper.vim 불러들이기 끝
+chdir(/usr/share/vim/vim82/plugin)
+fchdir() to previous dir
+"/usr/share/vim/vim82/plugin/spellfile.vim"을(를) 불러들이는 중
+/usr/share/vim/vim82/plugin/spellfile.vim 불러들이기 끝
+chdir(/usr/share/vim/vim82/plugin)
+fchdir() to previous dir
+"/usr/share/vim/vim82/plugin/tarPlugin.vim"을(를) 불러들이는 중
+/usr/share/vim/vim82/plugin/tarPlugin.vim 불러들이기 끝
+chdir(/usr/share/vim/vim82/plugin)
+fchdir() to previous dir
+"/usr/share/vim/vim82/plugin/tohtml.vim"을(를) 불러들이는 중
+/usr/share/vim/vim82/plugin/tohtml.vim 불러들이기 끝
+chdir(/usr/share/vim/vim82/plugin)
+fchdir() to previous dir
+"/usr/share/vim/vim82/plugin/vimballPlugin.vim"을(를) 불러들이는 중
+/usr/share/vim/vim82/plugin/vimballPlugin.vim 불러들이기 끝
+chdir(/usr/share/vim/vim82/plugin)
+fchdir() to previous dir
+"/usr/share/vim/vim82/plugin/zipPlugin.vim"을(를) 불러들이는 중
+/usr/share/vim/vim82/plugin/zipPlugin.vim 불러들이기 끝
+'packpath'에서 찾을 수 없음: "pack/*/start/*"
+'runtimepath'에서 찾을 수 없음: "plugin/**/*.vim"
+Reading viminfo file "/root/.viminfo" 인포 oldfiles
+"test.txt" [새로운]
+Reading viminfo file "/root/.viminfo" 마크
+"BufNewFile"을(를) 위한 자동명령어 * 실행중
+자동명령 if !did_filetype() && expand("<amatch>") !~ g:ft_ignore_pat | runtime! scripts.vim | endif
+
+chdir(/usr/share/vim/vim82)
+fchdir() to previous dir
+0 줄: "/usr/share/vim/vim82/scripts.vim" 불러들이는 중
+/usr/share/vim/vim82/scripts.vim 불러들이기 끝
+"BufNewFile"을(를) 위한 자동명령어 *에서 계속
+"BufNewFile"을(를) 위한 자동명령어 *.txt 실행중
+자동명령 if getline('$') !~ 'vim:.*ft=help'|   setf text| endif
+
+"FileType"을(를) 위한 자동명령어 * 실행중
+자동명령 exe "set syntax=" . expand("<amatch>")
+
+"Syntax"을(를) 위한 자동명령어 * 실행중
+자동명령 call s:SynSet()
+
+'runtimepath'에서 찾을 수 없음: "syntax/text.vim syntax/text/*.vim"
+"FileType"을(를) 위한 자동명령어 * 실행중
+자동명령 call s:LoadFTPlugin()
+
+chdir(/usr/share/vim/vim82/ftplugin)
+fchdir() to previous dir
+17 줄: "/usr/share/vim/vim82/ftplugin/text.vim" 불러들이는 중
+/usr/share/vim/vim82/ftplugin/text.vim 불러들이기 끝
+<SNR>14_LoadFTPlugin에서 계속
+"FileType"을(를) 위한 자동명령어 * 실행중
+자동명령 call s:LoadIndent()
+
+'runtimepath'에서 찾을 수 없음: "indent/text.vim"
+"FileType"을(를) 위한 자동명령어 * 실행중
+자동명령 call <sid>on_window_changed('FileType')
+
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline)
+fchdir() to previous dir
+6 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions.vim 불러들이기 끝
+<SNR>19_init에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+16 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/quickfix.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/quickfix.vim 불러들이기 끝
+airline#extensions#load에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload)
+fchdir() to previous dir
+1 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline.vim 불러들이기 끝
+3에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+40 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/netrw.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/netrw.vim 불러들이기 끝
+airline#extensions#load에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+58 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/term.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/term.vim 불러들이기 끝
+airline#extensions#load에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+87 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/commandt.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/commandt.vim 불러들이기 끝
+airline#extensions#load에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+166 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/branch.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/branch.vim 불러들이기 끝
+airline#extensions#load에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+179 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/fugitiveline.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/fugitiveline.vim 불러들이기 끝
+airline#extensions#load에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+238 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/whitespace.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/whitespace.vim 불러들이기 끝
+airline#extensions#load에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+253 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/wordcount.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/wordcount.vim 불러들이기 끝
+airline#extensions#load에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+313 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/keymap.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/keymap.vim 불러들이기 끝
+airline#extensions#load에서 계속
+'runtimepath'에서 찾을 수 없음: "autoload/vimtex.vim"
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+341 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/searchcount.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/searchcount.vim 불러들이기 끝
+airline#extensions#load에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline)
+fchdir() to previous dir
+3 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/section.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/section.vim 불러들이기 끝
+airline#init#sections에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline)
+fchdir() to previous dir
+2 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/highlighter.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/highlighter.vim 불러들이기 끝
+<SNR>50_wrap_accent에서 계속
+chdir(/home/yj/.vim/bundle/gruvbox/autoload/airline/themes)
+fchdir() to previous dir
+14 줄: "/home/yj/.vim/bundle/gruvbox/autoload/airline/themes/gruvbox.vim" 불러들이는 중
+chdir(/home/yj/.vim/bundle/gruvbox/autoload/airline/themes)
+fchdir() to previous dir
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline)
+fchdir() to previous dir
+2 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/themes.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/themes.vim 불러들이기 끝
+airline#themes#gruvbox#refresh에서 계속
+/home/yj/.vim/bundle/gruvbox/autoload/airline/themes/gruvbox.vim 불러들이기 끝
+airline#switch_theme에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline)
+fchdir() to previous dir
+1 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/builder.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/builder.vim 불러들이기 끝
+<SNR>40_invoke_funcrefs에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/wordcount/formatters)
+fchdir() to previous dir
+1 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/wordcount/formatters/default.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/wordcount/formatters/default.vim 불러들이기 끝
+<SNR>47_format_wordcount에서 계속
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+2 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/default.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/extensions/default.vim 불러들이기 끝
+airline#util#exec_funcrefs에서 계속
+No matching autocommands: User AirlineAfterTheme
+"User"을(를) 위한 자동명령어 AirlineModeChanged 실행중
+자동명령 call airline#mode_changed()
+
+No matching autocommands: User AirlineAfterTheme
+No matching autocommands: User AirlineAfterInit
+"BufNewFile"을(를) 위한 자동명령어 * 실행중
+자동명령 if !did_filetype() && expand("<amatch>") !~ g:ft_ignore_pat    && (getline(1) =~ '^#' || getline(2) =~ '^#' || getline(3) =~ '^#'^I|| getline(4) =~ '^#' || getline(5) =~ '^#') |   setf FALLBACK conf | endif
+
+"BufNewFile"을(를) 위한 자동명령어 * 실행중
+자동명령 if exists('b:git_dir') && b:git_dir =~# '^$\|' . s:bad_git_dir |   unlet b:git_dir | endif
+
+"BufWinEnter"을(를) 위한 자동명령어 * 실행중
+자동명령 call <sid>on_window_changed('BufWinEnter')
+
+"BufEnter"을(를) 위한 자동명령어 * 실행중
+자동명령 sil call s:LocalBrowse(expand("<amatch>"))
+
+"VimEnter"을(를) 위한 자동명령어 * 실행중
+자동명령 call <sid>on_window_changed('VimEnter')
+
+"VimEnter"을(를) 위한 자동명령어 * 실행중
+자동명령 sil call s:VimEnter(expand("<amatch>"))
+
+chdir(/home/yj)
+"CursorMoved"을(를) 위한 자동명령어 * 실행중
+자동명령 call <sid>on_cursor_moved()
+
+"CursorMoved"을(를) 위한 자동명령어 * 실행중
+자동명령 call s:Highlight_Matching_Pair()
+
+chdir(/home/yj/.vim/bundle/vim-airline/autoload/airline)
+fchdir() to previous dir
+38 줄: "/home/yj/.vim/bundle/vim-airline/autoload/airline/async.vim" 불러들이는 중
+/home/yj/.vim/bundle/vim-airline/autoload/airline/async.vim 불러들이기 끝
+<SNR>44_update_untracked에서 계속
+"ModeChanged"을(를) 위한 자동명령어 * 실행중
+자동명령 :call airline#update_tabline()
+
+
+"BufUnload"을(를) 위한 자동명령어 * 실행중
+자동명령 call <sid>on_window_changed('BufUnload')
+
+Viminfo 파일 "/root/.viminfo"을(를) 쓰는 중

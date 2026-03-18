@@ -10,6 +10,10 @@
     "codeLens.enable": true,
     "signature.enable": true,
     "suggest.preferCompleteThanJumpPlaceholder": true,
+	"python.pythonPath": "/usr/bin/python3",
+    "python.linting.ruffEnabled": true,
+    "python.linting.pylintEnabled": false,
+    "pyright.inlayHints.functionReturnTypes": false,
 	"languageserver": {
 		"haskell": {
 			"command": "haskell-language-server-wrapper",
