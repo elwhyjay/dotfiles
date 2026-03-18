@@ -113,7 +113,7 @@ function! s:show_documentation()
     call CocActionAsync('doHover')
   else
     execute '!' . &keywordprg . " " . expand('<cword>')
-  endif:
+  endif
 endfunction
 
 

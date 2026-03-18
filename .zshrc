@@ -112,10 +112,10 @@ source $ZSH/oh-my-zsh.sh
 
 #if macOS
 if [ -d "/opt/homebrew/bin" ] ; then
-    export PATH="/opt/homebrew/bin:/opt/homebrew/bin:$PATH"
-fi  
+    export PATH="/opt/homebrew/bin:$PATH"
+fi
 if [ -d "/usr/local/bin" ] ; then
-    export PATH="/usr/local/bin:/usr/local/bin:$PATH"
+    export PATH="/usr/local/bin:$PATH"
 fi
 if [ -f "/opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme" ]; then
     source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
