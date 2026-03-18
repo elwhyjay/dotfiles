@@ -53,7 +53,7 @@ set cursorline
 " 80th column color
 set textwidth=80
 set formatoptions-=t
-set colorcolumn=+1,+2,+3
+set colorcolumn=+1,+2
 " Listchars
 set list
 let &listchars = 'tab:› ,trail:-,extends:»,precedes:«,nbsp:.'
@@ -246,7 +246,7 @@ try
   Plug 'vim-airline/vim-airline'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'ntpeters/vim-better-whitespace'
-  Plug 'ayu-theme/ayu-vim'
+  Plug 'rebelot/kanagawa.nvim'
 
   " Syntax
   let g:polyglot_disabled = ['sensible', 'v'] | Plug 'sheerun/vim-polyglot'
@@ -416,47 +416,11 @@ endtry
 "
 " Theme
 "
-let ayucolor = 'dark'
 try
-  colorscheme ayu
+  colorscheme kanagawa
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme elflord
 endtry
-
-function! s:fg(item, color)
-  execute printf('highlight %s guifg=%s', a:item, a:color)
-endfunction
-function! s:bg(item, color)
-  execute printf('highlight %s guibg=%s', a:item, a:color)
-endfunction
-
-" TabLine
-let s:tab_color = '#1c2328'
-highlight TabLine cterm=NONE gui=NONE
-call s:fg('TabLine', '#62788c')
-call s:bg('TabLine', s:tab_color)
-call s:fg('TabLineSel', '#FFFFFF')
-call s:bg('TabLineSel', s:tab_color)
-call s:fg('TabLineFill', s:tab_color)
-
-" Pretty vimdiff colorscheme
-call s:fg('DiffDelete', '#5a0000')
-call s:bg('DiffDelete', '#340000')
-
-" IndentGuides
-let s:indent_color = '#151a1e'
-let s:whitespace_color = '#2d3640'
-call s:bg('IndentGuidesEven', s:indent_color)
-call s:bg('IndentGuidesOdd', s:indent_color)
-call s:fg('IndentGuidesEven', s:whitespace_color)
-call s:fg('IndentGuidesOdd', s:whitespace_color)
-call s:fg('Whitespace', s:whitespace_color)
-
-" Matching
-let s:match_color = '#232b32'
-highlight MatchParen cterm=NONE gui=NONE
-call s:bg('MatchParen', s:match_color)
-call s:bg('CocHighlightText', s:match_color)
 
 
 "

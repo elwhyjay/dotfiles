@@ -18,6 +18,51 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```bash
 brew install coreutils
 ```
+## Neovim key mappings
+
+Leader key: `,`
+
+### Leader
+
+| Key | Action |
+|-----|--------|
+| `,n` | NERDTree toggle |
+| `,i` | IndentGuides toggle |
+| `,g` | Mundo (undo tree) toggle |
+| `,f` | fzf LSP menu |
+| `,r` | CellularAutomaton make_it_rain |
+| `,D` | Insert date |
+
+### Control
+
+| Key | Action |
+|-----|--------|
+| `C-s` | Save file (normal/insert/visual) |
+| `C-a` | Go to beginning of line |
+| `C-e` | Go to end of line |
+| `C-space` | coc autocomplete trigger |
+
+### Function keys
+
+| Key | Action |
+|-----|--------|
+| `F5` | Compile & run C/C++ |
+| `F7` | DragSelectMode toggle |
+| `F8` | Tagbar toggle |
+
+### Others
+
+| Key | Action |
+|-----|--------|
+| `;` | `:` (command mode) |
+| `K` | Show documentation (hover) |
+| `Tab` / `S-Tab` | coc completion (insert) / indent (visual) |
+| `Alt-1~9` | Switch tab |
+| `Alt-t` | New tab |
+| `Alt-h/j/k/l` | Resize pane |
+| `Alt--` / `Alt-\` | Horizontal / vertical split |
+
+---
 ## Modern command
 
 | Legacy | Modern Alternative | Description |
