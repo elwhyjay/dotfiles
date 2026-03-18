@@ -1,23 +1,22 @@
-# Dotfiles 
-🏠 Personal dotfiles for \*NIX (macOS and Linux) systems.
+# Dotfiles
+Personal dotfiles for macOS and Linux.
 
+## Setup
+```bash
+git clone https://github.com/yj/dotfiles ~/dotfiles
+cd ~/dotfiles
+./install.sh
+```
+
+`install.sh` handles: symlinks, packages (brew/apt), vim-plug, TPM, NVM, Rust, Nerd Font.
+
+### Manual steps after install
+1. Restart terminal (or `exec zsh`)
+2. `p10k configure`
+3. tmux: `prefix + I` to install plugins
+4. nvim: `:PlugInstall` if plugins didn't auto-install
 
 ---
-## tmux
-```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-## git
-```bash
-
-```
-## mise
-
----
-## MacOS
-```bash
-brew install coreutils
-```
 ## Neovim key mappings
 
 Leader key: `,`

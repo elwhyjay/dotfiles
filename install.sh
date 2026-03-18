@@ -101,7 +101,7 @@ if [ "$OS" = "mac" ]; then
     # Modern CLI
     bat lsd fd btop httpie tree wget jq
     # Development
-    node go llvm universal-ctags cmake zig uv ruff direnv
+    node yarn go llvm universal-ctags cmake zig uv ruff direnv
     # Media
     ffmpeg hugo
   )
@@ -122,7 +122,7 @@ else
     # Modern CLI
     bat fd-find jq tree wget curl httpie
     # Development
-    nodejs npm golang-go cmake universal-ctags direnv
+    nodejs npm yarnpkg golang-go cmake universal-ctags direnv
     # Media
     ffmpeg hugo
   )
